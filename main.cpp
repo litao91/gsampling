@@ -16,6 +16,13 @@ int mix_time;
 vector<string> filenames;
 void parse_parameters(int, char**);
 
+extern float* setdev_data(float* data, int dSize, int numElement);
+extern float* setdev_dot(int numElement);
+extern float* setdev_out(int numElement);
+extern int* setdev_pat(int* pat, int m);
+extern float reduce_gpu(int numElement, int numThread, float* dev_data, float* dev_dot, float* dev_out, int* dev_pat);
+extern float reduce_cpu(float* data, int* pat);
+
 int main(int argc, char** argv) {
     gpu = false;
     parse_parameters(argc, argv);
@@ -55,7 +62,7 @@ void parse_parameters(int argc, char** argv) {
                 k = atoi(argv[++argnum]);
             }else if(!strcmp(argv[argnum], "-gpu")) {
                 gpu = true;
-            }else if(!strcmp(argv[argnum]), "-mix_time") {
+            }else if(!strcmp(argv[argnum], "-mix_time")) {
 
             }
         }

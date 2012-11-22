@@ -74,14 +74,14 @@ void clear_pattern(vector<int>& pat) {
  * \param filename, the file to read
  * \param r_data the returned datastructure
  */
-void read_data(const string& filename, vector<vector<double> >& r_data) {
+void read_data(const string& filename, vector<vector<float> >& r_data) {
     string line;
     double item;
     ifstream is(filename.c_str());
     r_data.clear();
     while(getline(is, line)){
         stringstream istr((char*) line.c_str());
-        r_data.push_back(vector<double>());
+        r_data.push_back(vector<float>());
         while(istr >> item) {
             r_data.back().push_back(item);
         }
