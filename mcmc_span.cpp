@@ -1,10 +1,8 @@
 #include "mcmc_span.h"
 #include <cstdlib>
 #include <ctime>
+#include "gpu.h"
 
-extern float* setdev_data(float* data, int dSize, int numElement);
-extern float* setdev_dot(int numElement);
-extern float* setdev_out(int numElement);
 /**
  * \class compare function object for a set of patterns
  */

@@ -6,6 +6,7 @@
 #include "mcmc_span.h"
 #include "util.h"
 #include "reduce_func.h"
+#include "gpu.h"
 using namespace std;
 double min_sup; //probability
 int k; //number of pattern to extract
@@ -15,13 +16,6 @@ bool gpu;
 int mix_time;
 vector<string> filenames;
 void parse_parameters(int, char**);
-
-extern float* setdev_data(float* data, int dSize, int numElement);
-extern float* setdev_dot(int numElement);
-extern float* setdev_out(int numElement);
-extern int* setdev_pat(int* pat, int m);
-extern float reduce_gpu(int numElement, int numThread, float* dev_data, float* dev_dot, float* dev_out, int* dev_pat);
-extern float reduce_cpu(float* data, int* pat);
 
 int main(int argc, char** argv) {
     gpu = false;

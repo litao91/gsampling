@@ -1,12 +1,10 @@
 #include "reduce_func.h"
+#include "gpu.h"
 #include <vector>
 
-extern float* setdev_data(float* data, int dSize, int numElement);
-extern float* setdev_dot(int numElement);
-extern float* setdev_out(int numElement);
-extern int* setdev_pat(int* pat, int m);
-extern float reduce_gpu(int numElement, int numThread, float* dev_data, float* dev_dot, float* dev_out, int* dev_pat);
-extern float reduce_cpu(float* data, int* pat);
+void ReduceFunc::set_gpu_params(float* a, float* b, float* c) {
+    //donothing
+}
 
 float CPUReduce::operator()(float* database,
         const vector<int>& pattern, int label_num, int trans_num) {

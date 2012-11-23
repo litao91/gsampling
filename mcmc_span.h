@@ -42,10 +42,10 @@ public:
     void run_alg(int mix_time, int k, ReduceFunc * reduce_func);
     void init_gpu();
     void print_max_pat();
-
     float* dev_data;
     float* dev_dot;
     float* dev_out;
+
 private:
     int _m_N; //database size
     vector<vector<float> > _m_database;

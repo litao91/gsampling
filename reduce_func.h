@@ -11,11 +11,8 @@ public:
     virtual float operator()(float* database,
             const vector<int>& pattern,
             int label_num,
-            int trans_num);
-    virtual void set_gpu_params(float*, float*, float* ) {
-        //do nothing
-    }
-};
+            int trans_num) =0;
+    virtual void set_gpu_params(float*, float*, float* ); };
 
 
 class CPUReduce: public ReduceFunc {
